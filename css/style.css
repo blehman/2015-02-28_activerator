@@ -1,0 +1,37 @@
+
+body {
+  font: 10px sans-serif;
+}
+
+.bar rect {
+  fill: steelblue;
+  shape-rendering: crispEdges;
+}
+
+.bar text {
+  fill: #fff;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.x-lab{
+  fill: #000;
+  stroke: #000;
+  font-size: large;
+}
+.y-lab{
+  fill: #000;
+  stroke: #000;
+  'text-anchor': 'start';
+  font-size: large;
+}
+
+.g-title{
+  fill: #000;
+  stroke: #000;
+  'text-anchor': 'start';
+  font-size: large;
+}
