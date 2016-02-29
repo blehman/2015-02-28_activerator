@@ -1,0 +1,5 @@
+[creds]
+client_id = 
+client_secret = 
+access_token = 
+url = https://www.strava.com/api/v3/
