@@ -1,6 +1,8 @@
+#!/usr/bin/env python
 # use 'cron' to run nightly?
 # add this line to imports later
 from time import gmtime, strftime
+from imports import *
 
 config = ConfigParser.RawConfigParser()
 config.read('config.cfg')
