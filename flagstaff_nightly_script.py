@@ -1,4 +1,5 @@
-
+# use 'cron' to run nightly?
+# add this line to imports later
 from time import gmtime, strftime
 
 config = ConfigParser.RawConfigParser()
@@ -21,14 +22,13 @@ def make_request(p,access_token,endpoint):
             , headers = header
         ).json()
 
-current_date = datetime.date.now().date()
+current_date = strftime("%Y-%m-%d", gmtime())
 endpoint = 'segments/636162/all_efforts'
 parameters = {
     'per_page': 10
-    , 'start_date_local': datetime.datetime.now().date() + 'T00:00:00Z'
-    , 'end_date_local':datetime.date + 'T23:59:59Z'
+    , 'start_date_local': current_date + 'T00:00:00Z'
+    , 'end_date_local': current_date + 'T23:59:59Z'
 }
-#print pp.dumps(make_request(parameters, access_token, endpoint),indent=4)
 data = make_request(parameters, access_token, endpoint)
-with open('data/initial_segment636162_data.json','wb') as result:
+with open(current_date + '.json','wb') as result:
     result.write(json.dumps(data))
